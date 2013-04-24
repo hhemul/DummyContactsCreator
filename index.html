@@ -1,7 +1,30 @@
 <html>
 <script src="cordova.js"></script>
 <script>
-	document.addEventListener('deviceready', function(){alert('deviceready')})
+	document.addEventListener('deviceready', function(){alert('deviceready')});
+
+	function uncreate(){
+		var fields = ["id", "nickname"];
+		var options = new ContactFindOptions();
+        options.filter="";
+        options.multiple=true;
+		navigator.contacts.find(fields, function(contacts){
+			for(var i=0; i<contacts.length; i++) contacts[i].remove();
+		}, function(err){
+			alert(JSON.stringify(err));
+		}, options);
+	}
+
+	function create(){
+		for(var i=0; i<1000; i++){
+			var obj = {
+				"displayName": "DummyContact"+i,
+				"nickname": "DummyContact"
+			}
+			var contact = navigator.contacts.create(obj);
+			contact.save()
+		}
+	}
 </script>
 <body>
 <p><a onclick="">create</a></p>

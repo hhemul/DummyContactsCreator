@@ -10,6 +10,7 @@
         options.multiple=true;
 		navigator.contacts.find(fields, function(contacts){
 			for(var i=0; i<contacts.length; i++) contacts[i].remove();
+			alert("ok");
 		}, function(err){
 			alert(JSON.stringify(err));
 		}, options);
@@ -24,10 +25,11 @@
 			var contact = navigator.contacts.create(obj);
 			contact.save()
 		}
+		alert("ok");
 	}
 </script>
 <body>
-<p><a onclick="">create</a></p>
-<p><a onclick="">uncreate</a></p>
+<p><a onclick="create()">create</a></p>
+<p><a onclick="uncreate()">uncreate</a></p>
 </body>
 </html>

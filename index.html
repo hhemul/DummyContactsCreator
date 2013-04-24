@@ -20,10 +20,11 @@
 		for(var i=0; i<1000; i++){
 			var obj = {
 				"displayName": "DummyContact"+i,
-				"nickname": "DummyContact"
+				"nickname": "DummyContact",
 			}
 			var contact = navigator.contacts.create(obj);
-			contact.save()
+			contact.phoneNumbers = [ new ContactField('mobile', "+74376843893", true) ];
+			contact.save();
 		}
 		alert("ok");
 	}

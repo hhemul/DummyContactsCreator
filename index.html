@@ -1,11 +1,9 @@
 <html>
 <script src="cordova.js"></script>
 <script>
-	function onload(){
-		alert("load");
-	}
+	addEventListener('deviceready', function(){alert('deviceready')})
 </script>
-<body onload="onload()">
+<body>
 <p><a onclick="">create</a></p>
 <p><a onclick="">uncreate</a></p>
 </body>

@@ -6,7 +6,7 @@
 	function uncreate(){
 		var fields = ["id", "nickname"];
 		var options = new ContactFindOptions();
-        options.filter="";
+        options.filter="DummyContact";
         options.multiple=true;
 		navigator.contacts.find(fields, function(contacts){
 			for(var i=0; i<contacts.length; i++) contacts[i].remove();
